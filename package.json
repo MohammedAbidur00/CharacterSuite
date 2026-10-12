@@ -1,0 +1,36 @@
+{
+  "name": "charactersuite",
+  "version": "1.0.0",
+  "description": "CharacterSuite is an application where the user can create, edit, delete characters.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammedAbidur00/CharacterSuite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MohammedAbidur00/CharacterSuite/issues"
+  },
+  "homepage": "https://github.com/MohammedAbidur00/CharacterSuite#readme",
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.3",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@capacitor-community/sqlite": "^8.1.1",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@capacitor/preferences": "^8.0.1",
+    "jeep-sqlite": "^2.8.0",
+    "sql.js": "1.11.0"
+  }
+}

@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Material Icons';
+    src: url('./fonts/MaterialIcons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Material Icons Outlined';
+    src: url('./fonts/MaterialIconsOutlined-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    white-space: nowrap;
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    white-space: nowrap;
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .folder-icon-size {
+    font-size: 37.5px;
+  }
+
+  .in-btn-size {
+    font-size: 16px;
+  }

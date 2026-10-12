@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Vite / web build output
+dist/
+.vite/
+
+# Character art and other local media
+/assets/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Test / coverage
+coverage/
+
+# Capacitor native build artifacts (platform gitignores also cover these)
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/app/src/main/assets/public
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+ios/App/build/
+ios/App/Pods/
+ios/App/output/
+ios/App/App/public
+ios/DerivedData/
+xcuserdata/

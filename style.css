@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: Arial;
+}
+
+:root {
+    /*LIGHTMODE*/
+    --border-colour-light-mode: black;
+    --font-colour: black;
+    --background-colour: white;
+    --box-shadow-one: 0 2px 5px rgba(0,0,0,0.15);
+
+     /*DARKMODE*/
+
+     /*GENERAL*/
+    --font-family: monospace;
+    --font-weight: normal;
+    --input-border-width: 1.5px;
+    --input-border-style: solid;
+    --input-padding: 8px 9px;
+    --input-border-radius: 6px;
+    --container-border-radius: 12px;
+    --input-font-size: 13.5px;
+    --btn-padding: 6px 10px;
+    --text-padding: 2px 8px;
+    --text-border-radius: 10px;
+    --btn-border-radius: 6px;
+}
+
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.Credentials-Box {
+    border: var(--border-colour-light-mode) var(--input-border-width) var(--input-border-style);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    min-width: 400px;
+    border-radius: var(--container-border-radius);
+}
+
+.Credentials-Box .Box-Title p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.Credentials-Box .Box-Title {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.Credentials-Box .Box-Inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+.Credentials-Box .Box-Inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Credentials-Box .Box-Inputs div p {
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.Credentials-Box .Box-Inputs input {
+    flex: 1;
+    border: var(--border-colour-light-mode) var(--input-border-width) var(--input-border-style);
+    padding: var(--input-padding);
+    border-radius: var(--input-border-radius);
+    font-family: var(--font-family);
+    font-size: var(--input-font-size);
+    font-weight: var(--font-weight);
+    color: var(--font-colour);
+    box-shadow: var(--box-shadow-one);
+}
+
+.Credentials-Box .Box-Btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+}
+
+.Credentials-Box .Box-Btns button, .Credentials-Box .Box-Btns .Label-Btn {
+    border: var(--border-colour-light-mode) var(--input-border-width) var(--input-border-style);
+    background-color: var(--background-colour);
+    padding: var(--btn-padding);
+    font-family: var(--font-family);
+    color: var(--font-colour);
+    border-radius: var(--btn-border-radius);
+    font-weight: var(--font-weight);
+    box-shadow: var(--box-shadow-one);
+    width: 30%;
+}
+
+.Credentials-Box .Box-Btns .Label-Btn {
+    padding: var(--text-padding);
+    border-radius: var(--text-border-radius);
+    width: fit-content;
+}
+
+.Message-Box-Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.Message-Box-Container p {
+    font-family: var(--font-family);
+    color: var(--font-colour);
+}
+
+.Sign-Up-Rules-Container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    width: 400px;
+    border: var(--border-colour-light-mode) var(--input-border-width) var(--input-border-style);
+    padding: 5px 0px;
+    border-radius: var(--input-border-radius);
+    box-shadow: var(--box-shadow-one);
+    text-align: left;
+}
+
+ul {
+    padding-left: 1.25rem;
+}
+
+li {
+    padding-left: 0.25rem;
+    font-family: var(--font-family);
+    color: var(--font-colour);
+}
+
+.Top-Bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 10000;
+}
+
+.Top-Bar .Top-Bar-Title-Container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    border-bottom: black 1.5px solid;
+}
+
+.Top-Bar .Top-Bar-Title-Container .left {
+    justify-self: start;
+}
+
+.Top-Bar .Top-Bar-Title-Container .center {
+    justify-self: center;
+}
+
+.Top-Bar .Top-Bar-Title-Container .right {
+    justify-self: end;
+}
+
+.Top-Bar .Top-Bar-Title-Container button {
+    margin: 0 4px;
+    padding: 3px 8px;
+    min-height: 15px;
+    background-color: var(--background-colour);
+    color: black;
+    font-family: monospace;
+    font-size: 14px;
+    border: var(--input-border-width) solid var(--border-colour-light-mode);
+    font-weight: bold;
+    border-radius: 6px;
+    transition: opacity 0.12s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    width: fit-content;
+    /* manipulation: removes 300ms tap delay while still allowing the
+        parent container to scroll â€” no touch JS on the button itself */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    cursor: pointer;
+}
+
+.Top-Bar .Top-Bar-Title-Container p {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+.Top-Bar .Top-Bar-Btns-Container {
+    border-bottom: var(--border-colour-light-mode) var(--input-border-width) var(--input-border-style);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    background: var(--background-colour);
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    /* Inertial scroll on iOS */
+    scroll-behavior: auto;
+}
+
+.Top-Bar .Top-Bar-Btns-Container button {
+    margin: 0 4px;
+    padding: 3.5px 12px;
+    min-height: 34px;
+    background-color: var(--background-colour);
+    color: black;
+    font-family: monospace;
+    font-size: 15px;
+    border: var(--input-border-width) solid var(--border-colour-light-mode);
+    font-weight: bold;
+    border-radius: 6px;
+    transition: opacity 0.12s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    width: fit-content;
+    /* manipulation: removes 300ms tap delay while still allowing the
+        parent container to scroll â€” no touch JS on the button itself */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    cursor: pointer;
+}
+.Top-Bar .Top-Bar-Btns-Container button:active { opacity: 0.55; }
+
+.User-Menu {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    background-color: white;
+    border: black 1.5px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+}
+
+.User-Menu div {
+    border: black 0.5px solid;
+    border-right: none;
+    border-left: none;
+    padding: 7px 0px;
+}
+
+.User-Menu .top {
+    border-top: none;
+}
+
+.User-Menu .bottom {
+    border-bottom: none;
+}
+
+.Top-Bar .Top-Bar-Title-Container .User-Menu button {
+    width: 150px;
+    font-family: monospace;
+    font-weight: normal;
+    min-height: 27px;
+    font-weight: bold;
+}
+
+.Add-Box-Container {
+    border: black 1.5px solid;
+    margin: 55px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 10px;
+}
+
+.Add-Box-Container .Add-Box-Section {
+    border: black 1.5px solid;
+    border-radius: 8px;
+    padding: 10px 10px 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.20);
+}
+
+.Add-Box-Container .Add-Box-Section div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Add-Box-Container .Add-Box-Section div p {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    margin-left: 1px;
+}
+
+.Add-Box-Container .Add-Box-Section div input {
+    border: black 1.5px solid;
+    padding: 12px;
+    font-size: 15px;
+    font-family: monospace;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.Add-Box-Container .Add-Box-Section div div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Add-Box-Container .Add-Box-Section div div label {
+    border: black 1.5px solid;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+#artPreviewsContainer {
+    border: black 1.5px solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.Add-Box-Container .Add-Box-Section div textarea {
+    resize: none;
+    border: black 1.5px solid;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 15px;
+    min-height: 300px;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.Add-Box-Container .Add-Box-Section .Gender-Btns-Container {
+    display: flex;
+    flex-direction: row;
+}
+
+.Add-Box-Container .Add-Box-Section .Gender-Btns-Container button {
+    border: black 1.5px solid;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    width: fit-content;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.Add-Box-Container .Add-Box-Section .Save-Cancel-Btns-Container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.Add-Box-Container .Add-Box-Section .Save-Cancel-Btns-Container button {
+    border: black 1.5px solid;
+    background-color: white;
+    border-radius: 8px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    padding: 6px 9px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.Add-Box-Section.noBorder {
+    border: none;
+    box-shadow: none;
+    padding: 5px;
+}
+
+.Page-Wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.Characters-View {
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.Character-Card {
+    border: black 1.5px solid;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: monospace;
+    gap: 10px;
+    width: 100%;
+}
+
+.Character-Card div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.Character-Card div p {
+    font-size: 25px;
+    font-weight: 100;
+    flex-wrap: wrap;
+}
+
+.Character-Art-Container {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Character-Card-Art-Item-Wrap {
+    position: relative;
+}
+
+.Character-Card div img, .Character-Card div video {
+    max-width: 100%;
+    height: auto;
+    border: black 1.5px solid;
+    border-radius: 10px;
+}
+
+.Character-Card-Profile-Board-Btns-Con {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.Character-Card-Profile-Board-Btns-Con button {
+    border: black 1.5px solid;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background-color: white;
+    font-family: monospace;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.Character-Card-Show-All-Btn-Con button {
+    border: none;
+    font-size: 13px;
+    font-family: Arial;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.Character-Edit-Btn-Con button {
+    border: none;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background-color: white;
+    font-family: monospace;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Character-Card div textarea {
+    border: none;
+    resize: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.Character-Card .Character-Card-Tags-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.Character-Card .Character-Card-Tags-Container div {
+    width: fit-content;
+    height: fit-content;
+}
+
+.Character-Card .Character-Card-Tags-Container div p {
+    font-family: monospace;
+    color: black;
+    font-size: 15px;
+    border: black 1.5px solid;
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+
+.Add-Box-Container .Add-Box-Section .Gender-Btns-Container button.addSelectedBtnStyle {
+    background-color: black;
+    color: white;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1;
+    color: black;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    border: black 1.5px solid;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--font-colour);
+}
+
+:focus {
+    outline: none;
+}
+
+.Hide {
+    display: none;
+}

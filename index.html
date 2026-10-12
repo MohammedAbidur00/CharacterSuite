@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="/material-icons.css"/>
+    <title>CharacterSuite</title>
+    </head>
+<body>
+    <div id="signUpPage" class="Wrapper Hide">
+        <div class="Credentials-Box">
+            <div class="Box-Title">
+                <p>SIGN UP</p>
+            </div>
+            <div class="Box-Inputs">
+                <div>
+                    <input id="setUsernameInput" type="text" placeholder="Set suite username">
+                </div>
+                <div>
+                    <input id="setPasswordInput" type="password" placeholder="Set suite password">
+                </div>
+                <div>
+                    <input id="verifyPasswordInput" type="password" placeholder="Verify suite password">
+                </div>
+            </div>
+            <div class="Sign-Up-Rules-Container">
+                <ul>
+                    <li>password length must be at least 10 characters</li>
+                    <li>password must contain at least 1 uppercase letter</li>
+                    <li>password must contain at least 1 lowercase letter</li>
+                    <li>password must contain at least 1 number</li>
+                    <li>password must contain at least 1 special character</li>
+                </ul>
+            </div>
+            <div id="messageBoxSignUpPage" class="Message-Box-Container Hide"></div>
+            <div class="Box-Btns">
+                <button id="signUpBtn">SIGN UP</button>
+                <button id="goToSignInPageBtn" class="Label-Btn">already have an account, sign in here</button>
+            </div>
+        </div>
+    </div>
+    <div id="signInPage" class="Wrapper">
+        <div class="Credentials-Box">
+            <div class="Box-Title">
+                <p>SIGN IN</p>
+            </div>
+            <div class="Box-Inputs">
+                <div>
+                    <input id="usernameInput" type="text" placeholder="Type suite username">
+                </div>
+                <div>
+                    <input id="passwordInput" type="password" placeholder="Type suite password">
+                </div>
+            </div>
+            <div id="messageBoxSignInPage" class="Message-Box-Container Hide"></div>
+            <div class="Box-Btns">
+                <button id="signInBtn">SIGN IN</button>
+                <button id="goToSignUpPageBtn" class="Label-Btn">don't have an account yet, sign up here</button>
+            </div>
+        </div>
+    </div>
+    <div id="homePage" class="Page-Wrapper Hide">
+        <div class="Top-Bar">
+            <div class="Top-Bar-Title-Container">
+                <div id="suiteRefreshBtn" class="left"><button>SUITE</button></div>
+                <div class="center"><p>CHARACTERS</p></div>
+                <div class="right"><button id="openUserMenuBtn"></button></div>
+                <div id="userMenu" class="User-Menu Hide">
+                    <div class="top">
+                        <button id="menuLogoutBtn">Settings</button>
+                    </div>
+                    <div class="bottom">
+                        <button id="menuSignOutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+            <div class="Top-Bar-Btns-Container">
+                <button id="allCharactersBtn">ALL</button>
+                <button id="maleCharactersBtn">MALE</button>
+                <button id="femaleCharactersBtn">FEMALE</button>
+                <button>SPECIFIC</button>
+                <button id="goToAddPageBtn">ADD</button>
+                <button><span class="material-icons">star</span></button>
+            </div>
+        </div>
+        <div id="allCharactersView" class="Characters-View"></div>
+        <div id="maleCharactersView" class="Hide"></div>
+        <div id="femaleCharactersView" class="Hide"></div>
+    </div>
+    <div id="specificPage"></div>
+    <div id="addPage" class="Page-Wrapper Hide">
+        <div class="Top-Bar">
+            <div class="Top-Bar-Title-Container">
+                <div id="addPageBackBtn" class="left"><button>BACK</button></div>
+                <div class="center"><p>ADD CHARACTER</p></div>
+            </div>
+        </div>
+        <div class="Add-Box-Container">
+            <div class="Add-Box-Section">
+                <div>
+                    <p>CHARACTER NAME</p>
+                </div>
+                <div>
+                    <input id="characterNameInput" type="text" placeholder="Enter the characters name...">
+                </div>
+            </div>
+            <div class="Add-Box-Section">
+                <div>
+                    <p>CHARACTER ART</p>
+                </div>
+                <div>
+                    <div id="artPreviewsContainer"></div>
+                    <div>
+                        <label for="characterArtInput">ADD CHARACTER ART</label>
+                        <input id="characterArtInput" class="Hide" type="file" name="media[]" accept="image/*,video/*" multiple>
+                    </div>
+                </div>
+            </div>
+            <div class="Add-Box-Section">
+                <div>
+                    <p>CHARACTER GENDER</p>
+                </div>
+                <div class="Gender-Btns-Container">
+                    <button id="selectMaleBtn">MALE</button>
+                    <button id="selectFemaleBtn">FEMALE</button>
+                </div>
+            </div>
+            <div class="Add-Box-Section">
+                <div>
+                    <p>CHARACTER DESCRIPTION</p>
+                </div>
+                <div>
+                    <textarea id="characterDescriptionInput" placeholder="Enter the characters description..."></textarea>
+                </div>
+            </div>
+            <div id="messageBoxAddPage" class="Message-Box-Container Hide"></div>
+            <div class="Add-Box-Section noBorder">
+                <div class="Save-Cancel-Btns-Container">
+                    <button id="saveCharacterBtn">SAVE</button>
+                    <button id="cancelCharacterBtn">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="profilePage" class="Page-Wrapper Hide">
+        <div class="Top-Bar">
+            <div class="Top-Bar-Title-Container">
+                <div id="profilePageBackBtn" class="left"><button>BACK</button></div>
+                <div class="center"><p id="characterProfileTitle"></p></div>
+            </div>
+            <div class="Top-Bar-Btns-Container">
+                <button>EDIT PROFILE</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
